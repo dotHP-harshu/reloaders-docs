@@ -4,14 +4,16 @@ import Sidebar from "./components/Sidebar";
 import Grid from "./components/Grid";
 import { ModeProvider } from "./context/ModeContext";
 import PopupCard from "./components/PopupCard";
+import PreLoader from "./components/PreLoader";
 function App() {
   const [activeLink, setActiveLink] = useState("bar_loaders");
 
   return (
     <ModeProvider>
+      <PreLoader />
       <Header />
-      <Sidebar activeLink={activeLink} setActiveLink={setActiveLink}/>
-      <Grid activeLink={activeLink}/>
+      <Sidebar activeLink={activeLink} setActiveLink={setActiveLink} />
+      <Grid activeLink={activeLink} />
     </ModeProvider>
   );
 }
