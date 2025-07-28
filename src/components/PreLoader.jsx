@@ -87,32 +87,32 @@ function PreLoader() {
       ref={preloaderRef}
       className="w-screen h-screen overflow-hidden bg-main-bg-light dark:bg-main-bg-dark fixed top-0 right-0 flex justify-center items-center z-[200]"
     >
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-4 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-4 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <DotCircleLoader color={"#3498db"} />
       </div>
 
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <ShapeMorphing color={"#3498db"} secondColor={"#ff6b9d"} />
       </div>
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <DashedRingLoader color={"#3498db"} />
       </div>
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <ScrambledLettersLoader text="Loading" />
       </div>
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <LissajousCurveLoader color={"#3498db"} />
       </div>
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <WaveformBar color={"#6366f1"} />
       </div>
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <CircleSkeleton size={50} />
       </div>
-      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2">
+      <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <YinYangLoader color1={"#2c3e50"} color2={"#ecf0f1"} />
       </div>
-      <div className="w-40 h-40">
+      <div className="w-40 h-40 max-sm:scale-50">
         <img id="logo" src="/images/logo.png" alt="logo" className="w-full drop-shadow-xl drop-shadow-accent-color"  />
         <span className="w-fit h-fit inline-block overflow-hidden">
           <h1 id="logo-text" className="text-lg text-accent-color tracking-wide">
