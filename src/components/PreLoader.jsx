@@ -25,7 +25,7 @@ const introLoadersPosition = [
   { id: 8, x: "65vw", y: "70vh" }, // bottom-right
 ];
 
-function PreLoader() {
+function PreLoader({setIsShowingPreloader}) {
   const preloaderRef = useRef(null);
   useGSAP(() => {
     const introLoaders = gsap.utils.toArray(
@@ -51,17 +51,21 @@ function PreLoader() {
       duration: 1,
       ease: "back.out",
     })
-      .to(introLoaders, {
-        top: "55%",
-        left: "55%",
-        x: "-50%",
-        y: "-50%",
-        scale: 0,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 1,
-        ease: "power2.out",
-      }, "-=0.3")
+      .to(
+        introLoaders,
+        {
+          top: "55%",
+          left: "55%",
+          x: "-50%",
+          y: "-50%",
+          scale: 0,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      )
       .from(logo, {
         scale: 0,
         opacity: 0,
@@ -76,9 +80,9 @@ function PreLoader() {
       .to(preloaderRef.current, {
         opacity: 0,
         y: "-100%",
-        delay:0.5,
+        delay: 0.5,
         duration: 1,
-        onComplete: () => preloaderRef.current.classList.add("hidden"),
+        onComplete: () => setIsShowingPreloader(false),
       });
   }, {scope: preloaderRef.current});
 
@@ -112,11 +116,20 @@ function PreLoader() {
       <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <YinYangLoader color1={"#2c3e50"} color2={"#ecf0f1"} />
       </div>
-      <div className="w-40 h-40 max-sm:scale-50">
-        <img id="logo" src="/images/logo.png" alt="logo" className="w-full drop-shadow-xl drop-shadow-accent-color"  />
-        <span className="w-fit h-fit inline-block overflow-hidden">
-          <h1 id="logo-text" className="text-lg text-accent-color tracking-wide">
-            @dothp/reloaders
+      <div className="w-40 h-40 ">
+        <img
+          id="logo"
+          src="/reloaders-docs/images/logo.png "
+          alt="logo"
+          className="w-full drop-shadow-xl drop-shadow-accent-color max-sm:scale-50"
+        />
+        <span className="w-fit h-fit inline-block overflow-hidden mt-6">
+          <h1
+            id="logo-text"
+            className="text-lg font-light text-accent-color tracking-wide w-full text-center"
+          >
+            @dothp/
+            <span className="text-primary-color font-semibold">reloaders</span>
           </h1>
         </span>
       </div>

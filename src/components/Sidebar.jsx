@@ -35,7 +35,7 @@ function Sidebar({activeLink, setActiveLink}) {
       />
       {/* Mobile sidebar */}
       <aside
-        className={`bg-surface-bg-light w-[25vw] min-w-60 dark:bg-surface-bg-dark border-r-2 border-r-border-light dark:border-r-border-dark p-8 fixed top-20 right-0 z-50 h-full hidden max-sm:flex  transition-all duration-300 space-y-6  justify-between items-start flex-col${
+        className={`bg-surface-bg-light w-[25vw] min-w-60 dark:bg-surface-bg-dark border-r-2 b order-r-border-light dark:border-r-border-dark p-8 fixed top-20 right-0 z-50 h-full hidden max-sm:flex  transition-all duration-300 space-y-6   items-start flex-col ${
           isShowing ? "translate-x-0" : "translate-x-full"
         }`}
       >
