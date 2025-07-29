@@ -18,10 +18,10 @@ function Grid({activeLink}) {
       </h3>
       {/* heading */}
       {/* card grid */}
-      <div className="w-full grid lg:grid-cols-4 max-lg:grid-cols-3 max-sm:grid-cols-2 max-xs:grid-cols-1 place-items-center gap-10 py-6 max-xs:py-4">
+      <div className="w-full grid lg:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-2 max-xs:grid-cols-1 place-items-center gap-10 py-6 max-xs:py-4">
         {
           cards.map((card, i)=>(
-            <Card key={i} card={card} setPopupCardElem={setPopupCardElem}/>
+            <Card key={i} card={card} number={i+1} setPopupCardElem={setPopupCardElem}/>
           ))
         }
       </div>

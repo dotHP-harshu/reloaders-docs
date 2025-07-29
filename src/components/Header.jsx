@@ -20,7 +20,7 @@ function Header() {
   }
   
   return (
-    <header className="bg-surface-bg-light dark:bg-surface-bg-dark flex justify-between items-center w-full px-20 max-lg:px-10 max-sm:px-6 fixed top-0 left-0 ">
+    <header className="bg-surface-bg-light dark:bg-surface-bg-dark flex justify-between items-center w-full px-20 max-lg:px-10 max-sm:px-6 fixed top-0 left-0 z-50">
       {/* Logo  */}
       <a href="/reloaders-docs" className="logo p-4">
         <img

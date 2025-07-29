@@ -25,66 +25,68 @@ const introLoadersPosition = [
   { id: 8, x: "65vw", y: "70vh" }, // bottom-right
 ];
 
-function PreLoader({setIsShowingPreloader}) {
+function PreLoader({ setIsShowingPreloader }) {
   const preloaderRef = useRef(null);
-  useGSAP(() => {
-    const introLoaders = gsap.utils.toArray(
-      preloaderRef.current.querySelectorAll(".intro-loaders")
-    );
+  useGSAP(
+    () => {
+      const introLoaders = gsap.utils.toArray(
+        preloaderRef.current.querySelectorAll(".intro-loaders")
+      );
 
-    const logo = preloaderRef.current.querySelector("#logo");
-    const logoText = preloaderRef.current.querySelector("#logo-text");
+      const logo = preloaderRef.current.querySelector("#logo");
+      const logoText = preloaderRef.current.querySelector("#logo-text");
 
-    introLoaders.forEach((loader, index) => {
-      gsap.set(loader, {
-        x: introLoadersPosition[index].x,
-        y: introLoadersPosition[index].y,
-        opacity: 0,
+      introLoaders.forEach((loader, index) => {
+        gsap.set(loader, {
+          x: introLoadersPosition[index].x,
+          y: introLoadersPosition[index].y,
+          opacity: 0,
+        });
       });
-    });
 
-    const tl = gsap.timeline();
+      const tl = gsap.timeline();
 
-    tl.to(introLoaders, {
-      opacity: 1,
-      stagger: 0.1,
-      duration: 1,
-      ease: "back.out",
-    })
-      .to(
-        introLoaders,
-        {
-          top: "55%",
-          left: "55%",
-          x: "-50%",
-          y: "-50%",
+      tl.to(introLoaders, {
+        opacity: 1,
+        stagger: 0.1,
+        duration: 1,
+        ease: "back.out",
+      })
+        .from(logo, {
           scale: 0,
           opacity: 0,
-          stagger: 0.1,
           duration: 1,
           ease: "power2.out",
-        },
-        "-=0.3"
-      )
-      .from(logo, {
-        scale: 0,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      })
-      .from(logoText, {
-        y: 100,
-        duration: 1,
-        ease: "power2.out",
-      })
-      .to(preloaderRef.current, {
-        opacity: 0,
-        y: "-100%",
-        delay: 0.5,
-        duration: 1,
-        onComplete: () => setIsShowingPreloader(false),
-      });
-  }, {scope: preloaderRef.current});
+        })
+        .from(logoText, {
+          y: 100,
+          duration: 1,
+          ease: "power2.out",
+        })
+        .to(
+          introLoaders,
+          {
+            top: "60%",
+            left: "58%",
+            x: "-50%",
+            y: "-50%",
+            scale: 0,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+          },
+          "-=1"
+        )
+        .to(preloaderRef.current, {
+          opacity: 0,
+          y: "-100%",
+          delay: 0.5,
+          duration: 1,
+          onComplete: () => setIsShowingPreloader(false),
+        });
+    },
+    { scope: preloaderRef.current }
+  );
 
   return (
     <div
@@ -96,7 +98,7 @@ function PreLoader({setIsShowingPreloader}) {
       </div>
 
       <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
-        <ShapeMorphing color={"#3498db"} secondColor={"#ff6b9d"} />
+        <ShapeMorphing color={"#3498db"} secondColor={"#ff6b9d"} size="60px" />
       </div>
       <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <DashedRingLoader color={"#3498db"} />
@@ -116,12 +118,12 @@ function PreLoader({setIsShowingPreloader}) {
       <div className="intro-loaders flex flex-col justify-center items-center h-40 w-40 absolute top-0 left-0 -translate-1/2 max-sm:scale-50">
         <YinYangLoader color1={"#2c3e50"} color2={"#ecf0f1"} />
       </div>
-      <div className="w-40 h-40 ">
+      <div className="w-40 h-40 bg-main-bg-light dark:bg-main-bg-dark">
         <img
           id="logo"
           src="/reloaders-docs/images/logo.png "
           alt="logo"
-          className="w-full drop-shadow-xl drop-shadow-accent-color max-sm:scale-50"
+          className="w-full drop-shadow-xl max-sm:scale-50 bg-main-bg-light dark:bg-main-bg-dark"
         />
         <span className="w-fit h-fit inline-block overflow-hidden mt-6">
           <h1

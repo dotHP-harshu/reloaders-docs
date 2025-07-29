@@ -1,5 +1,6 @@
  const categoryList = {
    bar_loaders: "Bar Loaders",
+   cube_loaders: "Cube Loaders",
    dot_loaders: "Dot Loaders",
    fun_loaders: "Fun Loaders",
    shape_loaders: "Shape Loaders",

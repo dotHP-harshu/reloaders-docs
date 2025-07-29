@@ -6,9 +6,6 @@ import { BsFilterSquareFill } from 'react-icons/bs';
 
 function Sidebar({activeLink, setActiveLink}) {
   const [isShowing, setIsShowing] = useState(false)
-
-  
-  
   
   return (
     <>
@@ -46,13 +43,18 @@ function Sidebar({activeLink, setActiveLink}) {
             className="absolute top-5 right-5 text-main-text-light dark:text-muted-text-dark"
           />
           {Object.entries(categoryList).map(([key, label], i) => (
-            <SideLinks
+            <div
               key={key}
-              linkName={label}
-              active={activeLink}
-              setActiveLink={setActiveLink}
-              linkKey={key}
-            />
+              onClick={() => setIsShowing(false)}
+              className="w-fit h-fit"
+              >
+              <SideLinks
+                linkName={label}
+                active={activeLink}
+                setActiveLink={setActiveLink}
+                linkKey={key}
+              />
+            </div>
           ))}
         </div>
         <footer className="w-full text-center text-xs text-muted-text-light dark:text-muted-text-dark mt-10">

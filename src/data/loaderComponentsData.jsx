@@ -1,4 +1,14 @@
 import {
+  PulsingBarsLoader,
+  RisingBarsLoader,
+  SlidingGradientBars,
+  MovingCenterBars,
+  AlternatingBarsLoader,
+  VerticalWaveBars,
+  SizeMorphingBars,
+  SequentialBarsLoader,
+  CrossPatternBars,
+  HorizontalStripesLoader,
   BasicProgressBar,
   StripedLoaderBar,
   IndeterminateProgressBar,
@@ -9,6 +19,16 @@ import {
   ParticleTrailLoader,
 } from "@dothp/reloaders/BarLoaders";
 
+import{
+  CubeLoader,
+  CubeGlowLoader,
+  ShrinkingCubeLoader,
+  DualCubeLoaderHorizontal,
+  DualCubeLoaderVertical,
+  MovingCubeLoader,
+
+} from "@dothp/reloaders/CubeLoaders"
+
 import {
   ThreeBouncingDots,
   DotsFading,
@@ -18,14 +38,12 @@ import {
   DotDrop,
   TypingDots,
   SequentialDotReveal,
-  DNAHelixDots,
   OrbitDots,
 } from "@dothp/reloaders/DotLoaders";
 
 import {
   HeartBeatAnimation,
   CoffeeCupSteam,
-  HourglassFlip,
   LoadingCat,
   LoaderRobot,
   InfinitySpinner,
@@ -44,6 +62,13 @@ import {
 import { SkeletonBar ,CircleSkeleton } from "@dothp/reloaders/SkeletonLoaders";
 
 import {
+  MorphingShapeLoader,
+  RotatingDiamondLoader,
+  CornerSquaresLoader,
+  RotatingBarsLoader,
+  SkewedSquaresLoader,
+  PulsingDotsLoader,
+  HexagonSpinnerLoader,
   RainbowSpinner,
   ColorFillDots,
   ShapeMorphing,
@@ -51,7 +76,6 @@ import {
   HexagonLoader,
   TriangleBounce,
   PolygonRotation,
-  ColorShiftingBackground,
 } from "@dothp/reloaders/ShapeLoaders";
 
 import {
@@ -62,7 +86,6 @@ import {
   OrbitSpinner,
   SolarSpinner,
   DashedRingLoader,
-  PieLoader,
   SVGRotateLoader,
   DNAHelixLoader,
 } from "@dothp/reloaders/Spinner";
@@ -75,14 +98,15 @@ import {
   TextWaveLoader,
   GlitchTextLoader,
   ScrambledLettersLoader,
-  ProgressiveWordLoader,
   ColorCycleTextLoader,
   BlinkingTextLoader,
+  TextTrailLoader,
+  TypingRevealLoader,
+  FlipTextLoader,
 } from "@dothp/reloaders/TextLoaders";
 
 
 
-import{} from "@dothp/reloaders/OtherLoaders"
 
 const PRIMARY_COLOR = "#6366f1";
 
@@ -90,9 +114,128 @@ const PRIMARY_COLOR = "#6366f1";
 const loaderComponentsData = {
   bar_loaders: [
     {
-      name: `<BasicProgressBar color={"#6366f1"} />`,
+      name: `<SlidingGradientBars color={"#6366f1"} />`,
+      import:
+        "import { SlidingGradientBars } from '@dothp/reloaders/BarLoaders';",
+      component: <SlidingGradientBars color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<HorizontalStripesLoader color={"#6366f1"} />`,
+      import:
+        "import { HorizontalStripesLoader } from '@dothp/reloaders/BarLoaders';",
+      component: <HorizontalStripesLoader color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<CrossPatternBars color={"#6366f1"} />`,
+      import: "import { CrossPatternBars } from '@dothp/reloaders/BarLoaders';",
+      component: <CrossPatternBars color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<SequentialBarsLoader color={"#6366f1"} />`,
+      import:
+        "import { SequentialBarsLoader } from '@dothp/reloaders/BarLoaders';",
+      component: <SequentialBarsLoader color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<SizeMorphingBars color={"#6366f1"} />`,
+      import:
+        "import {   SizeMorphingBars } from '@dothp/reloaders/BarLoaders';",
+      component: <SizeMorphingBars color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<VerticalWaveBars color={"#6366f1"} />`,
+      import:
+        "import {   VerticalWaveBars } from '@dothp/reloaders/BarLoaders';",
+      component: <VerticalWaveBars color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<AlternatingBarsLoader color={"#6366f1"} />`,
+      import:
+        "import {   AlternatingBarsLoader } from '@dothp/reloaders/BarLoaders';",
+      component: <AlternatingBarsLoader color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<MovingCenterBars color={"#6366f1"}  />`,
+      import:
+        "import {   MovingCenterBars } from '@dothp/reloaders/BarLoaders';",
+      component: <MovingCenterBars color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<RisingBarsLoader color={"#6366f1"} />`,
+      import:
+        "import {   RisingBarsLoader } from '@dothp/reloaders/BarLoaders';",
+      component: <RisingBarsLoader color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<PulsingBarsLoader color={"#6366f1"} />`,
+      import:
+        "import {   PulsingBarsLoader } from '@dothp/reloaders/BarLoaders';",
+      component: <PulsingBarsLoader color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '40px'}",
+        "color={string / '#6366f1'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<BasicProgressBar color={"#6366f1"} height="10px" />`,
       import: "import { BasicProgressBar } from '@dothp/reloaders/BarLoaders';",
-      component: <BasicProgressBar color={PRIMARY_COLOR} />,
+      component: <BasicProgressBar color={PRIMARY_COLOR} height="10px" />,
       props: [
         "width={string / '100%'}",
         "height={string / '8px'}",
@@ -105,9 +248,9 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<StripedLoaderBar color={"#6366f1"} />`,
+      name: `<StripedLoaderBar color={"#6366f1"} height="10px" />`,
       import: "import { StripedLoaderBar } from '@dothp/reloaders/BarLoaders';",
-      component: <StripedLoaderBar color={PRIMARY_COLOR} />,
+      component: <StripedLoaderBar color={PRIMARY_COLOR} height="10px" />,
       props: [
         "width={string / '100%'}",
         "height={string / '8px'}",
@@ -118,10 +261,12 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<IndeterminateProgressBar color={"#6366f1"} />`,
+      name: `<IndeterminateProgressBar color={"#6366f1"} height="10px" />`,
       import:
         "import { IndeterminateProgressBar } from '@dothp/reloaders/BarLoaders';",
-      component: <IndeterminateProgressBar color={PRIMARY_COLOR} />,
+      component: (
+        <IndeterminateProgressBar color={PRIMARY_COLOR} height="10px" />
+      ),
       props: [
         "width={string / '100%'}",
         "height={string / '8px'}",
@@ -132,9 +277,9 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<DualBarLoader color={"#6366f1"} />`,
+      name: `<DualBarLoader color={"#6366f1"} height="10px" />`,
       import: "import { DualBarLoader } from '@dothp/reloaders/BarLoaders';",
-      component: <DualBarLoader color={PRIMARY_COLOR} />,
+      component: <DualBarLoader color={PRIMARY_COLOR} height="10px" />,
       props: [
         "width={string / '100%'}",
         "height={string / '8px'}",
@@ -175,10 +320,10 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<MorphingBarLoader color={"#6366f1"} />`,
+      name: `<MorphingBarLoader color={"#6366f1"} height="10px" />`,
       import:
         "import { MorphingBarLoader } from '@dothp/reloaders/BarLoaders';",
-      component: <MorphingBarLoader color={PRIMARY_COLOR} />,
+      component: <MorphingBarLoader color={PRIMARY_COLOR} height="10px" />,
       props: [
         "width={string / '100%'}",
         "height={string / '8px'}",
@@ -189,10 +334,10 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<ParticleTrailLoader color={"#6366f1"} />`,
+      name: `<ParticleTrailLoader color={"#6366f1"} height="10px />`,
       import:
         "import { ParticleTrailLoader } from '@dothp/reloaders/BarLoaders';",
-      component: <ParticleTrailLoader color={PRIMARY_COLOR} />,
+      component: <ParticleTrailLoader color={PRIMARY_COLOR} height="10px" />,
       props: [
         "width={string / '100%'}",
         "height={string / '8px'}",
@@ -201,6 +346,77 @@ const loaderComponentsData = {
         "style={object}",
         "rounded={boolean / true}",
         "particleCount={integer / 3}",
+      ],
+    },
+  ],
+  cube_loaders: [
+    {
+      name: `<CubeLoader />`,
+      import: "import { CubeLoader } from '@dothp/reloaders/CubeLoaders';",
+      component: <CubeLoader />,
+      props: [
+        "size={string / '64px'}",
+        "secondaryColor={string / '#3498db'}",
+        "accentColor={string / '#fcfcfc'}",
+        "className={string}",
+        "style={object}",
+        "speed={string/ 'normal'}",
+      ],
+    },
+    {
+      name: `<CubeGlowLoader color={"#3498db"} />`,
+      import: "import { CubeGlowLoader } from '@dothp/reloaders/CubeLoaders';",
+      component: <CubeGlowLoader color={PRIMARY_COLOR} />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "secondaryColor={string / '#3498db'}",
+        "accentColor={string / '#fcfcfc'}",
+        "className={string}",
+        "style={object}",
+        "speed={string/ 'normal'}",
+      ],
+    },
+    {
+      name: `<ShrinkingCubeLoader />`,
+      import:
+        "import { ShrinkingCubeLoader } from '@dothp/reloaders/CubeLoaders';",
+      component: <ShrinkingCubeLoader />,
+      props: [
+        "size={string / '64px'}",
+        "secondaryColor={string / '#3498db'}",
+        "accentColor={string / '#fcfcfc'}",
+        "className={string}",
+        "style={object}",
+        "speed={string/ 'normal'}",
+      ],
+    },
+    {
+      name: `<DualCubeLoaderHorizontal />`,
+      import:
+        "import { DualCubeLoaderHorizontal } from '@dothp/reloaders/CubeLoaders';",
+      component: <DualCubeLoaderHorizontal />,
+      props: [
+        "size={string / '64px'}",
+        "secondaryColor={string / '#3498db'}",
+        "accentColor={string / '#fcfcfc'}",
+        "className={string}",
+        "style={object}",
+        "speed={string/ 'normal'}",
+      ],
+    },
+    {
+      name: `<MovingCubeLoader />`,
+      import:
+        "import { MovingCubeLoader } from '@dothp/reloaders/CubeLoaders';",
+      component: <MovingCubeLoader />,
+      props: [
+        "size={string / '64px'}",
+        "secondaryColor={string / '#3498db'}",
+        "accentColor={string / '#fcfcfc'}",
+        "className={string}",
+        "style={object}",
+        "speed={string/ 'normal'}",
       ],
     },
   ],
@@ -311,18 +527,6 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<DNAHelixDots color={"#3498db"} />`,
-      import: "import { DNAHelixDots } from '@dothp/reloaders/DotLoaders';",
-      component: <DNAHelixDots color={PRIMARY_COLOR} />,
-      props: [
-        "size={string / '8px'}",
-        "color={string / '#3498db'}",
-        "className={string}",
-        "style={object}",
-        "dotCount={integer / 6}",
-      ],
-    },
-    {
       name: `<OrbitDots color={"#3498db"} />`,
       import: "import { OrbitDots } from '@dothp/reloaders/DotLoaders';",
       component: <OrbitDots color={PRIMARY_COLOR} />,
@@ -361,19 +565,6 @@ const loaderComponentsData = {
         "className={string}",
         "style={object}",
         "duration={string / '2s'}",
-      ],
-    },
-    {
-      name: `<HourglassFlip color={"#8e44ad"} />`,
-      import: "import { HourglassFlip } from '@dothp/reloaders/FunLoaders';",
-      component: <HourglassFlip color={PRIMARY_COLOR} />,
-      props: [
-        "size={string / '64px'}",
-        "color={string / '#8e44ad'}",
-        "sandColor={string / '#f39c12'}",
-        "className={string}",
-        "style={object}",
-        "duration={string / '3s'}",
       ],
     },
     {
@@ -556,9 +747,101 @@ const loaderComponentsData = {
   ],
   shape_loaders: [
     {
-      name: `<RainbowSpinner />`,
+      name: `<MorphingShapeLoader size="60px" />`,
+      import:
+        "import { MorphingShapeLoader } from '@dothp/reloaders/ShapeLoaders';",
+      component: <MorphingShapeLoader size="60px" />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "secondarColor={string / '#ff6b9d'}",
+        "accentColor={string / '#3498db'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'slow'}",
+      ],
+    },
+    {
+      name: `<RotatingDiamondLoader size="60px" />`,
+      import:
+        "import { RotatingDiamondLoader } from '@dothp/reloaders/ShapeLoaders';",
+      component: <RotatingDiamondLoader size="60px" />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'fast'}",
+      ],
+    },
+    {
+      name: `<CornerSquaresLoader size="60px" />`,
+      import:
+        "import { CornerSquaresLoader } from '@dothp/reloaders/ShapeLoaders';",
+      component: <CornerSquaresLoader size="60px" />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'fast'}",
+      ],
+    },
+    {
+      name: `<RotatingBarsLoader size="60px" />`,
+      import:
+        "import { RotatingBarsLoader } from '@dothp/reloaders/ShapeLoaders';",
+      component: <RotatingBarsLoader size="60px" />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'fast'}",
+      ],
+    },
+    {
+      name: `<PulsingDotsLoader size="60px" />`,
+      import:
+        "import { PulsingDotsLoader } from '@dothp/reloaders/ShapeLoaders';",
+      component: <PulsingDotsLoader size="60px" />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'fast'}",
+      ],
+    },
+    {
+      name: `<HexagonSpinnerLoader size="60px" />`,
+      import:
+        "import { HexagonSpinnerLoader } from '@dothp/reloaders/ShapeLoaders';",
+      component: <HexagonSpinnerLoader size="60px" />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "className={string}",
+        "style={object}",
+      ],
+    },
+    {
+      name: `<SkewedSquaresLoader size="60px" />`,
+      import:
+        "import { SkewedSquaresLoader } from '@dothp/reloaders/ShapeLoaders';",
+      component: <SkewedSquaresLoader size="60px" />,
+      props: [
+        "size={string / '64px'}",
+        "color={string / '#3498db'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'fast'}",
+      ],
+    },
+    {
+      name: `<RainbowSpinner size="60px" />`,
       import: "import { RainbowSpinner } from '@dothp/reloaders/ShapeLoaders';",
-      component: <RainbowSpinner />,
+      component: <RainbowSpinner size="60px" />,
       props: [
         "size={string / '64px'}",
         "className={string}",
@@ -567,9 +850,16 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<ColorFillDots color={"#3498db"} secondColor={"#ff6b9d"} />`,
+      name: `<ColorFillDots color={"#3498db"} secondColor={"#ff6b9d"} size="30px" gap="5px"  />`,
       import: "import { ColorFillDots } from '@dothp/reloaders/ShapeLoaders';",
-      component: <ColorFillDots color={PRIMARY_COLOR} secondColor="#ff6b9d" />,
+      component: (
+        <ColorFillDots
+          color={PRIMARY_COLOR}
+          secondColor="#ff6b9d"
+          size="30px"
+          gap="5px"
+        />
+      ),
       props: [
         "size={string / '15px'}",
         "color={string / '#3498db'}",
@@ -582,9 +872,15 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<ShapeMorphing color={"#3498db"} secondColor={"#ff6b9d"} />`,
+      name: `<ShapeMorphing color={"#3498db"} secondColor={"#ff6b9d"} size="60px" />`,
       import: "import { ShapeMorphing } from '@dothp/reloaders/ShapeLoaders';",
-      component: <ShapeMorphing color={PRIMARY_COLOR} secondColor="#ff6b9d" />,
+      component: (
+        <ShapeMorphing
+          color={PRIMARY_COLOR}
+          secondColor="#ff6b9d"
+          size="60px"
+        />
+      ),
       props: [
         "size={string / '64px'}",
         "color={string / '#3498db'}",
@@ -595,10 +891,10 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<GeometricShapes color={"#3498db"} />`,
+      name: `<GeometricShapes color={"#3498db"} size="60px" />`,
       import:
         "import { GeometricShapes } from '@dothp/reloaders/ShapeLoaders';",
-      component: <GeometricShapes color={PRIMARY_COLOR} />,
+      component: <GeometricShapes color={PRIMARY_COLOR} size="60px" />,
       props: [
         "size={string / '64px'}",
         "color={string / '#3498db'}",
@@ -609,9 +905,11 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<HexagonLoader color={"#3498db"} secondColor={"#fff"} />`,
+      name: `<HexagonLoader color={"#3498db"} secondColor={"#fff"} size="60px" />`,
       import: "import { HexagonLoader } from '@dothp/reloaders/ShapeLoaders';",
-      component: <HexagonLoader color={PRIMARY_COLOR} secondColor="#fff" />,
+      component: (
+        <HexagonLoader color={PRIMARY_COLOR} secondColor="#fff" size="60px" />
+      ),
       props: [
         "size={string / '64px'}",
         "color={string / '#3498db'}",
@@ -622,9 +920,9 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<TriangleBounce color={"#3498db"} />`,
+      name: `<TriangleBounce color={"#3498db"} size="60px" />`,
       import: "import { TriangleBounce } from '@dothp/reloaders/ShapeLoaders';",
-      component: <TriangleBounce color={PRIMARY_COLOR} />,
+      component: <TriangleBounce color={PRIMARY_COLOR} size="60px" />,
       props: [
         "size={string / '64px'}",
         "color={string / '#3498db'}",
@@ -636,10 +934,10 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<PolygonRotation color={"#3498db"} />`,
+      name: `<PolygonRotation color={"#3498db"} size="60px" />`,
       import:
         "import { PolygonRotation } from '@dothp/reloaders/ShapeLoaders';",
-      component: <PolygonRotation color={PRIMARY_COLOR} />,
+      component: <PolygonRotation color={PRIMARY_COLOR} size="60px" />,
       props: [
         "size={string / '64px'}",
         "color={string / '#3498db'}",
@@ -647,19 +945,6 @@ const loaderComponentsData = {
         "style={object}",
         "duration={string / '1.5s'}",
         "sides={integer / 4}",
-      ],
-    },
-    {
-      name: `<ColorShiftingBackground />`,
-      import:
-        "import { ColorShiftingBackground } from '@dothp/reloaders/ShapeLoaders';",
-      component: <ColorShiftingBackground />,
-      props: [
-        "width={string / '100%'}",
-        "height={string / '100px'}",
-        "className={string}",
-        "style={object}",
-        "duration={string / '5s'}",
       ],
     },
   ],
@@ -796,20 +1081,6 @@ const loaderComponentsData = {
         "speed={string / 'normal'}",
         "dashSize={integer / 8}",
         "glowIntensity={number / 0.3}",
-      ],
-    },
-    {
-      name: `<PieLoader color={"#3498db"} />`,
-      import: "import { PieLoader } from '@dothp/reloaders/Spinner';",
-      component: <PieLoader color={PRIMARY_COLOR} />,
-      props: [
-        "size={string / '64px'}",
-        "color={string / '#3498db'}",
-        "className={string}",
-        "style={object}",
-        "speed={string / 'normal'}",
-        "gradientEnd={string / null}",
-        "showPercentage={boolean / false}",
       ],
     },
     {
@@ -953,26 +1224,6 @@ const loaderComponentsData = {
       ],
     },
     {
-      name: `<ProgressiveWordLoader wordList={["Loading", "Fetching"]} />`,
-      import:
-        "import { ProgressiveWordLoader } from '@dothp/reloaders/TextLoaders';",
-      component: (
-        <ProgressiveWordLoader
-          wordList={["Loading", "Fetching"]}
-          color={PRIMARY_COLOR}
-        />
-      ),
-      props: [
-        "wordList={array / ['Loading', 'Fetching', 'Finalizing', 'Complete']}",
-        "color={string / '#3498db'}",
-        "size={string / '24px'}",
-        "className={string}",
-        "style={object}",
-        "speed={string / 'normal'}",
-        "revealInterval={integer / 1000}",
-      ],
-    },
-    {
       name: `<ColorCycleTextLoader text="Loading" />`,
       import:
         "import { ColorCycleTextLoader } from '@dothp/reloaders/TextLoaders';",
@@ -984,6 +1235,47 @@ const loaderComponentsData = {
         "style={object}",
         "speed={string / 'normal'}",
         "colors={array / ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6']}",
+      ],
+    },
+    {
+      name: `<TextTrailLoader text="Loading" />`,
+      import: "import { TextTrailLoader } from '@dothp/reloaders/TextLoaders';",
+      component: <TextTrailLoader text="Loading" color={PRIMARY_COLOR} />,
+      props: [
+        "text={string / 'Loading'}",
+        "color={string / '#3498db'}",
+        "trailColor={string / '#3498db'}",
+        "size={string / '24px'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'normal'}",
+      ],
+    },
+    {
+      name: `<TypingRevealLoader text="Loading" />`,
+      import:
+        "import { TypingRevealLoader } from '@dothp/reloaders/TextLoaders';",
+      component: <TypingRevealLoader text="Loading" color={PRIMARY_COLOR} />,
+      props: [
+        "text={string / 'Loading'}",
+        "color={string / '#3498db'}",
+        "size={string / '24px'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'normal'}",
+      ],
+    },
+    {
+      name: `<FlipTextLoader text="Loading" />`,
+      import: "import { FlipTextLoader } from '@dothp/reloaders/TextLoaders';",
+      component: <FlipTextLoader text="Loading" color={PRIMARY_COLOR} />,
+      props: [
+        "text={string / 'Loading'}",
+        "color={string / '#3498db'}",
+        "size={string / '24px'}",
+        "className={string}",
+        "style={object}",
+        "speed={string / 'normal'}",
       ],
     },
     {

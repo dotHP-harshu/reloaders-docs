@@ -1,6 +1,6 @@
 {
   "name": "reloaders-docs",
-  "homepage": "https://dothp-harshu.github.io/reloaders-docs/"   ,
+  "homepage": "https://dothp-harshu.github.io/reloaders-docs/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +11,9 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
-    
   },
   "dependencies": {
-    "@dothp/reloaders": "^1.0.0",
+    "@dothp/reloaders": "^1.0.2",
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.11",
     "react": "^19.1.0",
