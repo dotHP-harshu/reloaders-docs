@@ -50,7 +50,7 @@ function Header() {
           </a>
         </li>
         <li>
-          <a href="https://dothp-harshu.github.io/reloaders/docs.html" target='_blank'>
+          <a href="https://github.com/dotHP-harshu/reloaders-docs/blob/main/README.md" target='_blank'>
             <SiGoogledocs
               size={24}
               className="text-muted-text-dark transition-colors duration-300 hover:text-primary-color"
